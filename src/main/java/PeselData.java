@@ -33,12 +33,12 @@ public class PeselData {
 
     public static String checkPesel(String pesel){
         pesel.length();
-        if(pesel.length()!=11){ return "pesel bledny, musi nmec 11 znakow"; }
+        if(pesel.length()!=11){ return "pesel błedny, musi mieć 11 znaków"; }
         int sumapesel = Character.getNumericValue(pesel.charAt(0)) + 3*Character.getNumericValue(pesel.charAt(1)) + 7*Character.getNumericValue(pesel.charAt(2))
                 + 9*Character.getNumericValue(pesel.charAt(3)) + Character.getNumericValue(pesel.charAt(4)) + 3*Character.getNumericValue(pesel.charAt(5))
                 + 7*Character.getNumericValue(pesel.charAt(6)) + 9*Character.getNumericValue(pesel.charAt(7)) + Character.getNumericValue(pesel.charAt(8)) +3*Character.getNumericValue(pesel.charAt(9))
                 + Character.getNumericValue(pesel.charAt(10));
-        if(sumapesel%10!=0) { return "pesel bledny"; }
+        if(sumapesel%10!=0) { return "pesel błedny"; }
         return "";
     }
 
@@ -76,7 +76,7 @@ public class PeselData {
 
             scheduler.start();
 
-            Scanner odczyt = new Scanner(System.in); //obiekt do odebrania danych od użytkownika
+            Scanner odczyt = new Scanner(System.in);
             String stringToExit = ":exit";
             System.out.println("Aby zakończyć wpisz "+stringToExit);
             String wpisane = "";
@@ -100,10 +100,10 @@ public class PeselData {
                 String wynikQuery = checkPesel(pesel);
                 if (wynikQuery.length() > 0) {
                     System.out.println(wynikQuery);
-                    System.out.println("Nie dodano wpisu !");
+                    System.out.println("Nie dodano osoby !");
                 } else {
                     updateaddToPersonList(new Person(city, name, pesel));
-                    System.out.println("Pomyśłnie dodano osobe " + name);
+                    System.out.println("Pomyślnie dodano osobe " + name);
                 }
             }
 

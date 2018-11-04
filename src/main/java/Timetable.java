@@ -30,7 +30,7 @@ public class Timetable {
             start = parser.parse(parser.format(start));
             end = parser.parse(parser.format(end));
 
-            //return candidate.after(start) && candidate.before(end);
+
             return !candidate.after(end) && !candidate.before(start);
 
         }

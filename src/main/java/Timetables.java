@@ -48,7 +48,7 @@ public class Timetables {
             if(minutesLeft!=-1){
                 String name;
                 name = (timetable.getType()==Timetable.Type.LESSON) ? "lekcji" : "przerwy";
-                left="Do końca "+ name+" pozostało "+minutesLeft.toString()+" minut";
+                left=minutesLeft.toString()+" minut do końca "+ name ;
             }
         }
         return left;

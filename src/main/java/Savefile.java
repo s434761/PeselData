@@ -21,6 +21,6 @@ public class Savefile implements org.quartz.Job {
             e.printStackTrace();
         }
 
-        //System.err.println(SQLchecker.myQueryList.size());
+
     }
 }
